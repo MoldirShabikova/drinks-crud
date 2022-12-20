@@ -1,0 +1,24 @@
+[
+    {
+        "id": 1,
+        "name": "Adam Sendler",
+        "picture": "https://s2982.pcdn.co/wp-content/uploads/2021/01/09-shoto-todoroki-my-hero-academia-1.jpg.optimal.jpg",
+        "flavor": "Uranium Blast",
+        "likes": 0
+
+    },
+    {
+        "id": 2,
+        "name": "Mozart Tyler",
+        "picture": "https://static.wikia.nocookie.net/bokunoheroacademia/images/8/83/Katsuki_Bakugo_School_Uniform_Full_Body.png/revision/latest/smart/width/250/height/250?cb=20190812065435",
+        "flavor": "Nuclear Tangent",
+        "likes": 0
+    },
+    {
+        "id": 2,
+        "name": "Naruto Izumaki",
+        "picture": "https://s2982.pcdn.co/wp-content/uploads/2021/01/07-eijiro-kirishima-my-hero-academia-1.jpg.optimal.jpg",
+        "flavor": "Crush Orange",
+        "likes": 0
+    }
+]
