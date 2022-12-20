@@ -19,4 +19,12 @@ module.exports = {
 
         res.status(200).send(drinks)
     },
+    deleteDrink: (req, res) =>{
+        const index = drinks.findIndex(el => el.id === +req.params.id)
+        
+        drinks.splice(index, 1)
+        
+        res.status(200).send(drinks)
+        
+    }
 }
