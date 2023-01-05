@@ -1,30 +1,44 @@
-const drinks = require('./db.json')
-let drinkId = 4
+const tours = require('./db.json')
+let tourId = 6
 module.exports = {
-    getDrinks: (req, res) =>{
-        res.status(200).send(drinks)
+    getTours: (req, res) =>{
+        res.status(200).send(tours)
     },
-    addDrinks: (req, res) =>{
-        const {name, flavor, picture} = req.body
+    addTours: (req, res) =>{
+        const {name, info, image, price} = req.body
 
-        let newDrinkObj ={
-            id: drinkId,
-            name: name,
-            flavor: flavor,
-            picture: picture,
-            likes: 0
+        let newTourObj = {
+          id: tourId,
+          name: name,
+          info: info,
+          image: image,
+            price: price,
+          
+        };
+        tours.push(newTourObj);
+        tourId++
+
+        res.status(200).send(tours)
+    },
+    deleteTour: (req, res) =>{
+        const index = tours.findIndex(el => el.id === +req.params.id)
+        
+        tours.splice(index, 1)
+        
+        res.status(200).send(tours)
+        
+    },
+
+    updateTour: (req, res) => {
+        const index = tours.findIndex((el) => el.id === +req.params)
+
+        const { type } = req.body
+        
+        if (type === 'like') {
+            tours[index].likes++
+        } else if (type === 'dislike') {
+            tours[index].likes--
         }
-        drinks.push(newDrinkObj)
-        drinkId++
-
-        res.status(200).send(drinks)
-    },
-    deleteDrink: (req, res) =>{
-        const index = drinks.findIndex(el => el.id === +req.params.id)
-        
-        drinks.splice(index, 1)
-        
-        res.status(200).send(drinks)
-        
+        res.status(200).send(tours)
     }
 }

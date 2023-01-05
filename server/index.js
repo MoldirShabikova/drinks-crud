@@ -6,12 +6,14 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
-const {getDrinks, addDrinks, deleteDrink} = require('./controller')
+const { getTours, addTours, deleteTour, updateTour } = require("./controller");
 
-app.get('/getDrinks', getDrinks)
+app.get("/getTours", getTours);
 
-app.post('/addDrink', addDrinks)
+app.post("/addTours", addTours);
 
-app.delete('/deleteDrink/:id', deleteDrink)
+app.delete("/deleteTour/:id", deleteTour);
+
+app.put("/likeTour/:id", updateTour);
 
 app.listen(4000, ()=> console.log('Listening on port 4000'))
