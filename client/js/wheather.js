@@ -1,5 +1,5 @@
 let weather = {
-    apiKey: "09702372096301bdc5ae582b4c349426",
+  apiKey: "09702372096301bdc5ae582b4c349426",
 
   fetchWeather: function (city) {
     axios
@@ -11,14 +11,10 @@ let weather = {
       )
       .then((res) => {
         this.displayWeather(res.data);
-        // if (!response.ok) {
-        //   alert("No weather found.");
-        //   throw new Error("No weather found.");
       })
       .catch((err) => {
-              console.log(err);
+        console.log(err);
       });
- 
   },
   displayWeather: function (data) {
     const { name } = data;
@@ -34,8 +30,7 @@ let weather = {
       "Humidity: " + humidity + "%";
     document.querySelector(".wind").innerText =
       "Wind speed: " + speed + " km/h";
-    document.querySelector(".weather").classList.remove("loading");
- 
+    document.querySelector(".weather").classList.remove("loading")
   },
   search: function () {
     this.fetchWeather(document.querySelector(".search-bar").value);
